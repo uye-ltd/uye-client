@@ -1,0 +1,28 @@
+.sidebar {
+  position: fixed;
+  font-size: 1.25rem;
+  background-color: var(--color-bg);
+  height: 100vh;
+  min-width: 288px;
+  width: 20vw;
+  overflow: auto;
+  font-family: var(--font-primary);
+  z-index: 20;
+}
+
+.link {
+  display: block;
+  color: var(--color-text);
+  padding-top: 1.1vh;
+  padding-left: 0.7vw;
+  padding-bottom: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.tags {
+  color: var(--color-muted);
+  font-size: 0.6875rem;
+  line-height: 1;
+  margin-left: 0.4vw;
+}

@@ -1,0 +1,512 @@
+/* ─── RESET ──────────────────────────────────────────────────────────────── */
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* ─── FONTS ──────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: Silom;
+  src: url('/fonts/Silom.woff2') format('woff2'),
+       url('/fonts/Silom.woff') format('woff'),
+       url('/fonts/silom.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+}
+
+/* ─── DESIGN TOKENS ──────────────────────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --color-bg:      black;
+  --color-text:    wheat;
+  --color-hover:   goldenrod;
+  --color-active:  red;
+  --color-muted:   grey;
+  --color-subtle:  dimgray;
+
+  /* Typography */
+  --font-primary:  Silom, sans-serif;
+}
+
+/* ─── BASE ───────────────────────────────────────────────────────────────── */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: var(--font-primary);
+  font-size: 52px;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 0;
+}
+
+body { display: block; }
+
+@media screen and (max-width: 5120px) { html { font-size: 52px; } }
+@media screen and (max-width: 4096px) { html { font-size: 42px; } }
+@media screen and (max-width: 3072px) { html { font-size: 34px; } }
+@media screen and (max-width: 2560px) { html { font-size: 28px; } }
+@media screen and (max-width: 1920px) { html { font-size: 22px; } }
+@media screen and (max-width: 1680px) { html { font-size: 18px; } }
+@media screen and (max-width: 1440px) { html { font-size: 16px; } }
+
+::-webkit-scrollbar { width: 0; }
+
+/* ─── INDEX PAGE ─────────────────────────────────────────────────────────── */
+
+.index_page {
+  background-color: var(--color-bg);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: var(--color-text);
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.index_page > div {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.index_page::selection { background: transparent; }
+.index_page::-moz-selection { background: transparent; }
+
+.header {
+  font-size: 5rem;
+  margin-bottom: 3vh;
+}
+
+/* ─── AUTH FORMS ─────────────────────────────────────────────────────────── */
+
+.form-input {
+  background-color: var(--color-text) !important;
+  color: var(--color-bg) !important;
+  width: 25vw;
+  min-width: 350px;
+  font-size: 1.5625rem;
+}
+
+.form-button {
+  width: 25vw;
+  min-width: 350px;
+  text-align: center;
+}
+
+.form-label {
+  font-size: 1.5625rem;
+}
+
+/* ─── MAIN ───────────────────────────────────────────────────────────────── */
+
+.main {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  color: var(--color-text);
+  height: 100%;
+  width: 80vw;
+  min-width: 500px;
+  left: 20vw;
+  overflow-x: visible;
+}
+
+@media screen and (max-width: 1445px) {
+  .main { left: 288px; }
+}
+
+/* ─── FOREGROUND / FLEX GRID ─────────────────────────────────────────────── */
+
+.foreground {
+  position: absolute;
+  margin-left: -2.8vw;
+  height: 100%;
+  width: 100%;
+  min-width: 500px;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1445px) {
+  .foreground { margin-left: -80px; }
+}
+
+.column-right {
+  position: sticky;
+  right: 13vw;
+  height: 100%;
+  width: 50vh;
+  min-width: 450px;
+  float: right;
+  text-align: right;
+  z-index: 11;
+}
+
+.column-left {
+  position: relative;
+  display: block;
+  height: 96%;
+  width: 50vh;
+  min-width: 450px;
+  float: left;
+  text-align: left;
+}
+
+.wrapper-flex {
+  display: flex;
+  flex-direction: column;
+  height: 96vh;
+  justify-content: flex-end;
+}
+
+.flex-top-1    { flex: 0 0 12vh; margin-top: 5vh; margin-bottom: 1vh; }
+.flex-top-2    { flex: 0 0 6vh;  margin-bottom: 1vh; }
+.flex-middle   { flex: 1 1 0vh; }
+.flex-bottom   { height: 50vh; flex: 0 0 50vh; margin-bottom: 5vh; }
+.flex-bottom-1 { height: 10vh; flex: 0 0 10vh; }
+.flex-bottom-2 { height: 40vh; flex: 0 0 40vh; margin-bottom: 5vh; }
+
+/* ─── BACKGROUND ─────────────────────────────────────────────────────────── */
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.wrapper-info {
+  position: relative;
+  left: 7vw;
+  width: 20.8vw;
+  font-size: 1rem;
+  min-width: 300px;
+  text-align: right;
+  cursor: default;
+  user-select: none;
+}
+
+/* ─── UNDERGROUND LAYERS ─────────────────────────────────────────────────── */
+
+.underground {
+  position: absolute;
+  height: 96%;
+  width: 100%;
+  z-index: -10;
+}
+
+.column-underground {
+  position: relative;
+  display: block;
+  left: 7vw;
+  height: 100%;
+  width: 60vh;
+  min-width: 540px;
+  float: left;
+  text-align: left;
+  z-index: -10;
+}
+
+.flex-middle-underground { height: 60vh; flex: 0 0 60vh; }
+.flex-bottom-underground { height: 16vh; flex: 0 0 16vh; }
+
+.under-underground {
+  position: absolute;
+  background-color: var(--color-bg);
+  height: 120%;
+  width: 120%;
+  z-index: -20;
+}
+
+.column-under-underground {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 89vh;
+  left: 25vw;
+  min-width: 800px;
+  float: left;
+  text-align: left;
+  z-index: -20;
+}
+
+.flex-middle-under-underground { height: 89vh; flex: 0 0 89vh; }
+.flex-bottom-under-underground { height: 33vh; flex: 0 0 33vh; }
+
+/* ─── TEXT & LINKS ───────────────────────────────────────────────────────── */
+
+.wheat_text {
+  color: var(--color-text);
+  font-size: 1.25rem;
+}
+
+.wheat_text_link        { color: var(--color-text); text-decoration: none; }
+.wheat_text_link_green  { color: var(--color-text); text-decoration: none; }
+.wheat_text_link_yellow { color: var(--color-text); text-decoration: none; }
+.wheat_text_link_red    { color: var(--color-text); text-decoration: none; }
+
+.wheat_text_link:hover        { color: var(--color-hover); }
+.wheat_text_link_green:hover  { color: green; }
+.wheat_text_link_yellow:hover { color: var(--color-hover); }
+.wheat_text_link_red:hover    { color: var(--color-active); }
+.wheat_text_link:active       { color: var(--color-active); text-decoration: none; }
+
+.text-logo {
+  position: relative;
+  top: 22vh;
+  font-size: 1.25rem;
+  text-shadow: 0.11vh 0.11vh 0.11vh var(--color-muted),
+               0.22vh 0.22vh 0.11vh var(--color-muted),
+               0.33vh 0.33vh 0.11vh var(--color-bg);
+  z-index: 15;
+  cursor: default;
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────────────────────── */
+
+/* Base — shared by interactive and static buttons */
+.btn-group .button,
+.btn-group .button-no-hover,
+.btn-group .a,
+.btn-group .input {
+  background-color: var(--color-muted);
+  border: 0;
+  color: var(--color-text);
+  padding: 2vh 1.8vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 1.5625rem;
+  margin: 0 0.55vh;
+  line-height: 1;
+  text-shadow: 0.11vh 0.11vh 0.11vh var(--color-subtle),
+               0.22vh 0.22vh 0.11vh var(--color-bg);
+  box-shadow: 0.11vh 0.11vh 0.11vh var(--color-subtle),
+              0.22vh 0.22vh 0.11vh var(--color-subtle),
+              0.33vh 0.33vh 0.11vh var(--color-subtle),
+              0.44vh 0.44vh 0.11vh var(--color-bg);
+}
+
+/* Interactive — .button gets hover/active/disabled states */
+.btn-group .button,
+.btn-group .a,
+.btn-group .input {
+  cursor: pointer;
+}
+
+.btn-group .button:hover {
+  background-color: var(--color-subtle);
+  color: var(--color-hover);
+}
+
+.btn-group .button:active {
+  background-color: var(--color-subtle);
+  color: var(--color-active);
+  box-shadow: none;
+  transform: translate(0.44vh, 0.44vh);
+}
+
+.btn-group .button:disabled,
+.btn-group .button-no-hover:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── LISTS ──────────────────────────────────────────────────────────────── */
+
+.list { list-style-type: none; margin: 0; padding: 0; }
+
+/* ─── IMAGES ─────────────────────────────────────────────────────────────── */
+
+.image-box { position: relative; width: 50vh; height: 50vh; }
+
+.image {
+  position: absolute;
+  width: 50vh;
+  height: 50vh;
+  z-index: 5;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.image-mask {
+  z-index: 11;
+  mix-blend-mode: darken;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.image-border {
+  width: 51vh;
+  height: 51vh;
+  margin-top: -5px;
+  margin-left: -5px;
+  z-index: 12;
+  filter: blur(10px);
+}
+
+.image-box-underground { position: relative; left: 9vw; width: 60vh; height: 60vh; }
+
+.image-underground {
+  position: relative;
+  width: 60vh;
+  height: 60vh;
+  filter: blur(5px);
+  border: 0 solid var(--color-bg);
+  z-index: -10;
+}
+
+.image-mask-underground {
+  width: 60vh;
+  height: 60vh;
+  filter: blur(10px);
+  border: 1px solid var(--color-bg);
+  mix-blend-mode: darken;
+  z-index: -9;
+}
+
+.image-border-underground {
+  width: 63vh;
+  height: 63vh;
+  left: -1vw;
+  margin-top: -1.5px;
+  margin-left: -1.5px;
+  filter: blur(10px);
+  z-index: -8;
+}
+
+.image-box-under-underground { position: relative; top: 9vh; left: 20vw; width: 120vh; height: 120vh; }
+
+.image-under-underground {
+  width: 100vh;
+  height: 100vh;
+  filter: blur(20px);
+  -webkit-filter: blur(18px);
+  border: 20px solid var(--color-bg);
+  z-index: -20;
+}
+
+.image-mask-under-underground {
+  width: 100vh;
+  height: 100vh;
+  filter: blur(10px);
+  z-index: -19;
+  border: 10px solid var(--color-bg);
+  mix-blend-mode: darken;
+}
+
+/* ─── PROFILE EDIT ───────────────────────────────────────────────────────── */
+
+.edit-front { z-index: 10; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] { -moz-appearance: textfield; }
+input[type=text]   { background-color: transparent; }
+
+.text-input {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  background-color: transparent;
+  border-style: hidden;
+  text-align: start;
+  resize: none;
+}
+
+/* ─── CHECKBOXES ─────────────────────────────────────────────────────────── */
+
+.checkbox-group { width: 100%; position: relative; }
+.checkbox-group:hover { cursor: pointer; }
+
+.liked-songs-wrapper { height: 100%; width: 100%; display: flex; }
+.left-container  { width: 85%; flex: 0 0 85%; }
+.right-container { width: 15%; flex: 0 0 15%; justify-content: center; align-items: center; padding-left: 10px; }
+
+.checkbox {
+  position: relative;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  background-color: var(--color-muted);
+  color: var(--color-bg);
+  height: 1rem;
+  width: 80%;
+  padding: 2px;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+/* ─── TRACK LIST ─────────────────────────────────────────────────────────── */
+
+.fixed-height-container {
+  position: relative;
+  float: right;
+  top: 3vh;
+  height: 33vh;
+  width: 33vh;
+  padding: 3px;
+  background: transparent;
+  z-index: 15;
+}
+
+.content {
+  text-shadow: 1px 1px 1px var(--color-bg);
+  height: 33vh;
+  overflow: auto;
+  color: var(--color-text);
+}
+
+.liked-songs { font-size: 1rem; }
